@@ -1,0 +1,1021 @@
+﻿@{
+    Layout = null; ///"~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<!-- RTL support - for demo only -->
+<script src="~/js/demo-rtl.js"></script>
+<!--
+If you need RTL support just include here RTL CSS file <link rel="stylesheet" type="text/css" href="css/libs/bootstrap-rtl.min.css" />
+And add "rtl" class to <body> element - e.g. <body class="rtl">
+-->
+<!-- libraries -->
+<link href="~/css/libs/font-awesome.css" rel="stylesheet" />
+<link href="~/css/libs/nanoscroller.css" rel="stylesheet" />
+
+
+<!-- global styles -->
+<link href="~/css/compiled/theme_styles.css" rel="stylesheet" />
+
+<!-- this page specific styles -->
+
+<link href="~/css/libs/daterangepicker.css" rel="stylesheet" />
+<link href="~/css/libs/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+<link href="~/css/libs/weather-icons.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+@*<script src="~/js/bootstrap.min.js"></script>*@
+
+
+
+<!-- Favicon -->
+@*<link type="image/x-icon" href="favicon.png" rel="shortcut icon" />*@
+
+<!-- google font libraries -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+
+<script src="~/js/demo-skin-changer.js"></script>
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.js"></script>
+<script src="~/js/jquery.nanoscroller.min.js"></script>
+<script src="~/js/demo.js"></script>
+<script src="~/js/moment.min.js"></script>
+<script src="~/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/js/jquery-jvectormap-world-merc-en.js"></script>
+<script src="~/js/gdp-data.js"></script>
+<!-- this page specific scripts -->
+<script src="~/js/flot/jquery.flot.min.js"></script>
+<script src="~/js/flot/jquery.flot.resize.min.js"></script>
+<script src="~/js/flot/jquery.flot.time.min.js"></script>
+<script src="~/js/flot/jquery.flot.threshold.js"></script>
+<script src="~/js/flot/jquery.flot.axislabels.js"></script>
+<script src="~/js/jquery.sparkline.min.js"></script>
+<script src="~/js/skycons.js"></script>
+
+<!-- theme scripts -->
+<script src="~/js/scripts.js"></script>
+<script src="~/js/pace.min.js"></script>
+
+<script src="~/js/bootbox.min.js"></script>
+
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+<script src="~/js/bootstrap.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/js/bootstrap.js"></script>
+
+@*<link href="../jqGrid/css/jquery-ui-custom.css" rel="stylesheet" />
+    <link href="../jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
+    <script src="../jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script src="../jqGrid/js/i18n/grid.locale-en.js"></script>*@
+
+<link href="../css/libs/jquery.multiselect.css" rel="stylesheet" />
+<script src="../Scripts/jquery.multiselect.js"></script>
+
+
+<link href="~/jqGrid/css/jquery-ui-custom.css" rel="stylesheet" />
+<link href="~/jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
+<script src="~/jqGrid/js/jquery.jqGrid.min.js"></script>
+<script src="~/jqGrid/js/i18n/grid.locale-en.js"></script>
+
+@*<script src="~/bootstrapJqgrid/plugins/jquery.contextmenu.js"></script>*@
+<style type="text/css">
+    .top-band {
+        background-color: #812972;
+        border-bottom-width: 8px;
+        border-bottom-style: solid;
+        border-bottom-color: #f0d36d;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+        .top-band .logo-img {
+            display: block;
+            float: left;
+            text-align: center;
+            background-color: #e71f79;
+            margin-top: -20px;
+            margin-bottom: -60px;
+            margin-right: 30px;
+            padding-top: 25px;
+            padding-bottom: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: all .3s ease-out 0s;
+        }
+</style>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+    <div style="margin:15px;">
+        <div class="row">
+            <div class="col-xs-2" style="margin-top:10px;">
+                <img id="imgclient" src="@Url.Action("showClientLogo", "Account")" />
+            </div>
+            <div class="col-xs-8 text-center">
+                <span style="font-size:22px;font-weight:bold; color:green;">CUET 2023</span><br />
+                <span style="font-size:22px;font-weight:bold; color:green;">Online First Phase Counselling</span><br />
+                <span style="font-size:22px;font-weight:bold; color:green;">20th July 2023</span>
+            </div>
+            <div class="col-xs-2 text-right" style="margin-top:10px;">
+                <img id="imgNAAC" src="@Url.Action("showNAACLogo", "Account")" width="70px" height="70px" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12" style="padding:10px; background-color:darkseagreen; font-size:15px; text-decoration:underline;"><b>Personal Information</b></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1"><b>Name of Candidate<span style="color:red;"> *</span></b></div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtCandidateName" />
+            </div>
+            <div class="col-sm-1"><b>Father's Name<span style="color:red;"> *</span></b></div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtFatherName" />
+            </div>
+            <div class="col-sm-1"><b>Mother's Name</b></div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtMotherName" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1"><b>Date of Birth<span style="color:red;"> *</span></b></div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtDOB" readonly="readonly" />
+            </div>
+            <div class="col-sm-1"><b>Gender<span style="color:red;"> *</span></b></div>
+            <div class="col-sm-3">
+                <select id="ddlGender" class="form-control">
+                    <option value="0">--Select--</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Trans</option>
+                </select>
+            </div>
+            <div class="col-sm-1"><b>Category</b></div>
+            <div class="col-sm-3">
+                <select id="ddlCategory" class="form-control"></select>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>Address<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <textarea id="txtAddress" class="form-control"></textarea>
+            </div>
+            <div class="col-sm-1">
+                <b>Country<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <select id="ddlCountry" class="form-control"></select>
+            </div>
+            <div class="col-sm-1">
+                <b>State<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <select id="ddlState" class="form-control"></select>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>District</b>
+            </div>
+            <div class="col-sm-3">
+                <select id="ddlDistrict" class="form-control"></select>
+            </div>
+            <div class="col-sm-1">
+                <b>City</b>
+            </div>
+            <div class="col-sm-3">
+                <select id="ddlCity" class="form-control"></select>
+            </div>
+            <div class="col-sm-1">
+                <b>Pin Code</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtPinCode" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>Mobile No.<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtMobileNo" onkeypress="return isNumber(event)" maxlength="10" />
+            </div>
+            <div class="col-sm-1">
+                <b>Alternate Mobile No. <span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtAlternateMobileNo" onkeypress="return isNumber(event)" maxlength="10" />
+            </div>
+            <div class="col-sm-1">
+                <b>Email-ID<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtEmailID" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>Alternate Email-ID</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtAlternateEmailID" />
+            </div>
+            <div class="col-sm-1">
+                
+            </div>
+            <div class="col-sm-4">
+                <input id="chkIsPH" type="checkbox" title="Person with Benchmark Disability (PWBD)" style="vertical-align: sub;" />
+                <b>Person with Benchmark Disability (PWBD)</b>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12" style="padding:10px; background-color:darkseagreen; font-size:15px; text-decoration:underline;"><b>Academic Qualification</b></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>10th Board</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtHighSchoolBoard" />
+            </div>
+            <div class="col-sm-1">
+                <b>12th Board</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtIntermediateBoard" />
+            </div>
+            <div class="col-sm-1">
+                <b>Graduation University</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtGraduationBoard" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <b>10th Percentage</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtHighSchoolPercentage" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+            <div class="col-sm-1">
+                <b>12th Percentage</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtIntermediatePercentage" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+            <div class="col-sm-1">
+                <b>Graduation Percentage</b>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="txtGraduationPercentage" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12" style="padding:10px; background-color:darkseagreen; font-size:15px; text-decoration:underline;">
+                <b>Program Information</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5" style="padding:10px; color:red; font-size:11px; text-decoration:underline;">
+                <b>Note: Kindly fill maximum 7 choices</b>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-5">
+                <table id="tableProgram"></table>
+                <div id="pagerProgram"></div>
+            </div>
+            <div class="col-sm-2">
+                <br /><br /><br /><br /><br />
+                <button type="button" id="btnAdd" class="btn btn-success form-control"><b>Add to Right</b></button><br /><br />
+                <button type="button" id="btnRemove" class="btn btn-danger form-control"><b>Remove From Right</b></button>
+            </div>
+            <div class="col-sm-5">
+                <table id="tableAddedProgram"></table>
+                <div id="pagerAddedProgram"></div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12" style="padding:10px; background-color:darkseagreen; font-size:15px; text-decoration:underline;"><b>CUET Information (Important: Submit the following information same as mentioned in CUET Result Card)</b></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>CUET Roll No.<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETRollNo" />
+            </div>
+            <div class="col-sm-2">
+                <b>CUET Application No.<span style="color:red;"> *</span></b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETApplicationNo" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>1st Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName1" />
+            </div>
+            <div class="col-sm-2">
+                <b>1st Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile1" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>2nd Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName2" />
+            </div>
+            <div class="col-sm-2">
+                <b>2nd Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile2" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>3rd Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName3" />
+            </div>
+            <div class="col-sm-2">
+                <b>3rd Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile3" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>4th Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName4" />
+            </div>
+            <div class="col-sm-2">
+                <b>4th Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile4" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>5th Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName5" />
+            </div>
+            <div class="col-sm-2">
+                <b>5th Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile5" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>6th Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName6" />
+            </div>
+            <div class="col-sm-2">
+                <b>6th Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile6" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <b>7th Subject Name.</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtSubjectName7" />
+            </div>
+            <div class="col-sm-2">
+                <b>7th Subject CUET Percentile Score</b>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="txtCUETSubjectPercentile7" onkeypress="return isNumber(event)" maxlength="6" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <button type="button" id="btnSubmit" class="btn btn-success form-control"><b>Submit</b></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#txtDOB").datepicker({
+            dateFormat: "dd/mm/yy",
+            maxDate: '+0D',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0",
+        });
+
+        GetCategory();
+        FillCountry();
+        FillCourse();
+        FillSelectedCourse();
+
+        $("#ddlCountry").change(function () {
+            FillState($("#ddlCountry").val(), "0");
+        });
+        $("#ddlState").change(function () {
+            FillDistrict($("#ddlState").val(), "0");
+        });
+        $("#ddlDistrict").change(function () {
+            FillCity($("#ddlDistrict").val(), "0");
+        });
+
+        $("#btnAdd").click(function (e) {
+
+            var myGrid = $('#tableProgram');
+            var CGID = myGrid.jqGrid('getDataIDs');
+            var selRowIdss = myGrid.jqGrid("getGridParam", "selarrrow");
+            var rowItem = selRowIdss;
+
+            if (rowItem == "") {
+                bootbox.alert("Please Select atleast one Course to Add.");
+                return;
+            }
+            if (selRowIdss.length > 7) {
+                bootbox.alert("Please Select only 7 Course Preference.");
+                return;
+            }
+
+            var CmyGrid = $('#tableAddedProgram');
+            var SCID = CmyGrid.jqGrid('getDataIDs');
+
+            if ((SCID.length + selRowIdss.length) > 7) {
+                bootbox.alert("Course Preference Already Set.");
+                return;
+            }
+
+            var CID = $("#tableAddedProgram");
+            var CID = CID.jqGrid('getDataIDs');
+            for (var i = 0; i < selRowIdss.length; i++) {
+                for (var j = 0; j < CID.length; j++) {
+                    var CD = $("#tableProgram").getCell(selRowIdss[i], "CourseID");
+                    var C = $("#tableAddedProgram").getCell(CID[j], "CourseD");
+                    var Course = $("#tableAddedProgram").getCell(CID[j], "Course");
+                    if (CD == C) {
+                        bootbox.alert(Course + " already Exist");
+                        return;
+                    }
+                }
+            }
+
+            for (i = 0, n = selRowIdss.length; i < n; i++) {
+                var data = myGrid.jqGrid("getLocalRow", selRowIdss[i]);
+                var datarow = [{
+                    "CourseID": data["CourseID"],
+                    "Course": data["Course"],
+                    "UniversityID": $("#ddlUniversity").val(),
+                    "CollegeID": $("#ddlCollege").val(),
+                    "CourseType": $("#ddlCourseType").val(),
+                }];
+                var su = jQuery("#tableAddedProgram").addRowData(0, datarow, "last");
+            }
+
+            for (var k = 0; k < rowItem.length; k++) {
+                var id = rowItem[k];
+                $('#tableProgram').jqGrid('delRowData', id);
+                k--;
+            }
+
+            $("#cb_jqgrdSelectBranch").prop("checked", false);
+        });
+
+        $("#btnRemove").click(function () {
+            var myGrid = $('#tableAddedProgram');
+            var i, selRowIdss = myGrid.jqGrid("getGridParam", "selarrrow");
+            var rowItem = selRowIdss;
+            if (rowItem == "") {
+                bootbox.alert("Please select atleast one Course to Remove.");
+                return;
+            }
+            var CID = $("#tableProgram").jqGrid('getDataIDs');
+            for (i = 0; i < selRowIdss.length; i++) {
+                var data = myGrid.jqGrid("getLocalRow", selRowIdss[i]);
+                var coursid = data["CourseID"];
+                var ischek = false;
+                for (var j = 0; j < CID.length; j++) {
+                    var C = $("#tableProgram").getCell(CID[j], "CourseID");
+                    if (coursid == C) {
+                        ischek = true;
+                        break;
+                    }
+                    else {
+                    }
+                }
+                if (!ischek) {
+                    var datarow = [{
+                        "CourseID": data["CourseID"],
+                        "Course": data["Course"],
+                    }];
+                    var su = jQuery("#tableProgram").addRowData(0, datarow, "last");
+                }
+            }
+
+            for (var k = 0; k < rowItem.length; k++) {
+                var id = rowItem[k];
+                $('#tableAddedProgram').jqGrid('delRowData', id);
+                k--;
+            }
+            $("#cb_tableAddedProgram").prop("checked", false);
+        });
+
+        $("#btnSubmit").click(function () {
+
+            $.ajaxSettings.traditional = true;
+
+            if ($("#txtCandidateName").val().trim() == "") {
+                bootbox.alert("<b>Please Enter Candidate Name</b>");
+                return;
+            }
+
+            if ($("#txtFatherName").val().trim() == "") {
+                bootbox.alert("<b>Please Enter Father Name</b>");
+                return;
+            }
+
+            if ($("#txtDOB").val().trim() == "") {
+                bootbox.alert("<b>Please Pick DOB</b>");
+                return;
+            }
+
+            if ($("#ddlGender").val().trim() == "0") {
+                bootbox.alert("<b>Please Select Gender</b>");
+                return;
+            }
+
+
+            if ($("#txtDOB").val().trim() != "") {
+
+                var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+                var Val_date = $('#txtDOB').val();
+                if (Val_date.match(dateformat)) {
+                    var seperator1 = Val_date.split('/');
+                    var seperator2 = Val_date.split('-');
+
+                    if (seperator1.length > 1) {
+                        var splitdate = Val_date.split('/');
+                    }
+                    else if (seperator2.length > 1) {
+                        var splitdate = Val_date.split('-');
+                    }
+                    var dd = parseInt(splitdate[0]);
+                    var mm = parseInt(splitdate[1]);
+                    var yy = parseInt(splitdate[2]);
+                    var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                    if (mm == 1 || mm > 2) {
+                        if (dd > ListofDays[mm - 1]) {
+                            bootbox.alert("<b>Invalid DOB format!!</b><br />");
+                            return;
+                        }
+                    }
+                    if (mm == 2) {
+                        var lyear = false;
+                        if ((!(yy % 4) && yy % 100) || !(yy % 400)) {
+                            lyear = true;
+                        }
+                        if ((lyear == false) && (dd >= 29)) {
+                            bootbox.alert("<b>Invalid DOB format!!</b><br />");
+                            return;
+                        }
+                        if ((lyear == true) && (dd > 29)) {
+                            bootbox.alert("<b>Invalid DOB format!!</b><br />");
+                            return;
+                        }
+                    }
+                }
+                else {
+                    bootbox.alert("<b>Invalid DOB format!!</b><br />");
+                    return;
+                }
+            }
+
+            if ($("#ddlCountry").val().trim() == "" || $("#ddlCountry").val().trim() == "0" || $("#ddlCountry").val() == null) {
+                bootbox.alert("<b>Please Select Country</b>");
+                return;
+            }
+
+            if ($("#ddlState").val().trim() == "" || $("#ddlState").val().trim() == "0" || $("#ddlCountry").val() == null) {
+                bootbox.alert("<b>Please Select Country</b>");
+                return;
+            }
+
+            if ($("#txtAddress").val().trim() == "") {
+                bootbox.alert("<b>Please Enter Address</b>");
+                return;
+            }
+
+            if ($("#txtMobileNo").val().trim() == "") {
+                bootbox.alert("<b>Please Enter Mobile No.</b>");
+                return;
+            }
+            else {
+                if ($("#txtMobileNo").val().trim().length != 10) {
+                    bootbox.alert("<b>Please Enter Valid 10 digit Mobile No.</b>");
+                    return;
+                }
+            }
+            if ($("#txtAlternateMobileNo").val().trim() == "") {
+                bootbox.alert("<b>Please Enter Alternate Mobile No.</b>");
+                return;
+            }
+            else {
+                if ($("#txtAlternateMobileNo").val().trim().length != 10) {
+                    bootbox.alert("<b>Please Enter Valid 10 digit Alternate Mobile No.</b>");
+                    return;
+                }
+            }
+
+            if ($("#txtEmailID").val().trim() == "") {
+                bootbox.alert("<b>Please Enter EmailID</b>");
+                return;
+            }
+            else {
+                if (validateEmail($("#txtEmailID").val().trim())) {
+                }
+                else {
+                    bootbox.alert("<b>Please enter valid EmailID.</b>");
+                    return;
+                }
+            }
+
+            if ($("#txtAlternateEmailID").val().trim() != "") {
+                if (validateEmail($("#txtAlternateEmailID").val().trim())) {
+                }
+                else {
+                    bootbox.alert("<b>Please enter valid Alternate EmailID.</b>");
+                    return;
+                }
+            }
+
+            if ($("#txtCUETRollNo").val().trim() == "") {
+                bootbox.alert("<b>Please Enter CUET Roll No.</b>");
+                return;
+            }
+
+            if ($("#txtCUETApplicationNo").val().trim() == "") {
+                bootbox.alert("<b>Please Enter CUET Application No.</b>");
+                return;
+            }
+
+            var StuCourses = $('#tableAddedProgram').jqGrid('getGridParam', 'data');
+            if (StuCourses == '' || StuCourses == null || StuCourses == undefined) {
+                bootbox.alert("<b>Please Add Atleast One Program.</b>");
+                return;
+            }
+
+            var params = [];
+            params[0] = $("#txtCandidateName").val().trim();
+            params[1] = $("#txtFatherName").val().trim();
+            params[2] = $("#txtMotherName").val().trim();
+            params[3] = $("#txtDOB").val().trim();
+            params[4] = $("#ddlGender").val();
+            params[5] = $("#ddlCategory").val();
+            params[6] = $("#txtAddress").val().trim();
+            params[7] = ($("#ddlCountry").val() == null || $("#ddlCountry").val() == undefined || $("#ddlCountry").val() == "") ? "0" : $("#ddlCountry").val();
+            params[8] = ($("#ddlState").val() == null || $("#ddlState").val() == undefined || $("#ddlState").val() == "") ? "0" : $("#ddlState").val();
+            params[9] = ($("#ddlDistrict").val() == null || $("#ddlDistrict").val() == undefined || $("#ddlDistrict").val() == "") ? "0" : $("#ddlDistrict").val();
+            params[10] = ($("#ddlCity").val() == null || $("#ddlCity").val() == undefined || $("#ddlCity").val() == "") ? "0" : $("#ddlCity").val();
+            params[11] = $("#txtPinCode").val().trim();
+            params[12] = $("#txtMobileNo").val().trim();
+            params[13] = $("#txtAlternateMobileNo").val().trim();
+            params[14] = $("#txtEmailID").val().trim();
+            params[15] = $("#txtAlternateEmailID").val().trim();
+            params[16] = $("#chkIsPH").prop("checked");
+            params[17] = $("#txtHighSchoolBoard").val().trim();
+            params[18] = $("#txtIntermediateBoard").val().trim();
+            params[19] = $("#txtGraduationBoard").val().trim();
+            params[20] = $("#txtHighSchoolPercentage").val().trim();
+            params[21] = $("#txtIntermediatePercentage").val().trim();
+            params[22] = $("#txtGraduationPercentage").val().trim();
+            params[23] = JSON.stringify(StuCourses);
+            params[24] = $("#txtCUETRollNo").val().trim();
+            params[25] = $("#txtCUETApplicationNo").val().trim();
+            params[26] = $("#txtSubjectName1").val().trim();
+            params[27] = $("#txtCUETSubjectPercentile1").val().trim();
+            params[28] = $("#txtSubjectName2").val().trim();
+            params[29] = $("#txtCUETSubjectPercentile2").val().trim();
+            params[30] = $("#txtSubjectName3").val().trim();
+            params[31] = $("#txtCUETSubjectPercentile3").val().trim();
+            params[32] = $("#txtSubjectName4").val().trim();
+            params[33] = $("#txtCUETSubjectPercentile4").val().trim();
+            params[34] = $("#txtSubjectName5").val().trim();
+            params[35] = $("#txtCUETSubjectPercentile5").val().trim();
+            params[36] = $("#txtSubjectName6").val().trim();
+            params[37] = $("#txtCUETSubjectPercentile6").val().trim();
+            params[38] = $("#txtSubjectName7").val().trim();
+            params[39] = $("#txtCUETSubjectPercentile7").val().trim();
+
+            bootbox.confirm("Are you sure you want to submit your Registration ?", function (result) {
+
+                if (result) {
+
+                    var dialog = bootbox.dialog({
+                        message: '<p class="text-center mb-0"><img src="../Images/LoginImg/loading.svg" style="width:50px; height:50px;"/>  Please wait ...</p>',
+                        closeButton: false
+                    });
+
+                    $.ajax({
+                        url: '../CFOP/OnlineRegistrationByStudent_InsertRecord',
+                        datatype: "json",
+                        type: 'POST',
+                        data: {
+                            param: params,
+                            ERegID: $("#hdERegID").val(),
+                            Chk: $("#hdChk").val()
+                        },
+                        success: function (result) {
+
+                            dialog.modal('hide');
+
+                            if (result > 0) {
+
+                                bootbox.alert({
+                                    size: 'small',
+                                    message: "<center><b>Thanks for Registration</b> <br /><br /><b>For payment click here</b> <br />" + "<a href='https://bit.ly/UUAccountDetails'>https://bit.ly/UUAccountDetails</a></center>",
+                                    callback: function () {
+                                        window.location.replace("https://bit.ly/UUAccountDetails");
+                                    }
+                                });
+                            }
+                            else if (result == -2) {
+                                bootbox.alert("<b>Student Registration Already Exist.</b>");
+                            }
+                            else {
+                                bootbox.alert("<b>Some Thing Went Wrong, Please Contact to Erp Cell.</b>");
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+    
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode == 8 || charCode == 46) {
+            return true;
+        }
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        if (charCode < 48 || charCode > 57) {
+            return false;
+        }
+        return true;
+    }
+
+    function FillCourse() {
+        $.ajax({
+            url: '../CFOP/FillCourseForOnlineCounseling',
+            datatype: "json",
+            type: 'POST',
+            data: {
+            },
+            success: function (response) {
+                $.jgrid.gridUnload('tableProgram');
+                var dt = response.state;
+                $("#tableProgram").jqGrid({
+                    datatype: "jsonstring",
+                    mtype: 'GET',
+                    height: "200",
+                    width: null,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    colNames: ['CourseID', 'Program'],
+                    colModel: [
+                        { name: 'CourseID', index: 'CourseID', width: 100, align: 'left', key: true, hidden: true },
+                        {
+                            name: 'Course', index: 'Course', width: 300, align: 'left',
+                            cellattr: function (rowId, tv, rawObject, cm, rdata) { return 'style="white-space: normal; font-size:10px; font-weight:bold;"' }
+                        },
+                    ],
+                    datastr: dt,
+                    rownumbers: true,
+                    rowNum: 500,
+                    viewrecords: true,
+                    loadonce: true,
+                    multiselect: true,
+                    //paging: true,
+                    align: "center",
+                    //pager: "#pagerProgram"
+                });
+                $("#tableProgram").jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn" });
+            }
+        });
+    }
+
+    var rowItemstr = '[]';
+    function FillSelectedCourse() {
+
+        $.jgrid.gridUnload('tableAddedProgram');
+        $("#tableAddedProgram").jqGrid({
+            datatype: "jsonstring",
+            mtype: 'GET',
+            height: "200",
+            width: null,
+            autowidth: true,
+            shrinkToFit: true,
+            colNames: [
+                'CourseID', 'Selected Program'
+            ],
+            colModel: [
+                { name: 'CourseID', index: 'CourseID', width: 100, align: 'left', key: true, hidden: true },
+                {
+                    name: 'Course', index: 'Course', width: 300, align: 'left',
+                    cellattr: function (rowId, tv, rawObject, cm, rdata) { return 'style="white-space: normal; font-size:10px;"' }
+                }
+            ],
+            datastr: rowItemstr,
+            rownumbers: true,
+            rowNum: 20,
+            viewrecords: true,
+            loadonce: true,
+            paging: true,
+            multiselect: true,
+            align: "center"
+        });
+        $("#tableAddedProgram").jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn" });
+    }
+
+    function FillCountry() {
+        $.ajax({
+            type: "POST",
+            url: '../SMS/FillCountry',
+            data: {},
+            datatype: "json",
+            success: function (response) {
+                var dt = response;
+                $("#ddlCountry").empty();
+                var ddlObj = $("#ddlCountry");
+                var items = "";
+                for (var i = 0; i < dt.length; i++) {
+                    if (dt[i].Value == "0") {
+                        items += "<option value='" + dt[i].Value + "'>--Select--</option>";
+                    }
+                    else {
+                        items += "<option value='" + dt[i].Value + "'>" + dt[i].Text.toUpperCase() + "</option>";
+                    }
+                }
+                ddlObj.html(items).show();
+                ddlObj.val("1");
+                FillState("1", "0");
+            }
+        });
+    }
+
+    function FillState(CountryID, StateID) {
+        $.ajax({
+            type: "POST",
+            url: '../SMS/FillState',
+            data: {
+                CountryID: CountryID
+            },
+            datatype: "json",
+            success: function (response) {
+                var dt = response;
+                $("#ddlState").empty();
+                var ddlObj = $("#ddlState");
+                var items = "";
+                for (var i = 0; i < dt.length; i++) {
+                    items += "<option  value='" + dt[i].Value + "'>" + dt[i].Text.toUpperCase() + "</option>";
+                }
+                ddlObj.html(items).show();
+                ddlObj.val(StateID);
+            }
+        });
+    }
+
+    function FillDistrict(StateID, DistrictID) {
+        $.ajax({
+            type: "POST",
+            url: '../HRM/FillDistrict',
+            data: { StateID: StateID },
+            datatype: "json",
+            success: function (response) {
+                var dt = response;
+                $("#ddlDistrict").empty();
+                var ddlObj = $("#ddlDistrict");
+                var items = "";
+                for (var i = 0; i < dt.length; i++) {
+                    items += "<option selected=\"selected\" value='" + dt[i].Value + "'>" + dt[i].Text.toUpperCase() + "</option>";
+                }
+                ddlObj.html(items).show();
+                ddlObj.val(DistrictID);
+            }
+        });
+    }
+
+    function FillCity(DistrictID, CityID) {
+        $.ajax({
+            type: "POST",
+            url: '../HRM/FillCity',
+            data: { districtID: DistrictID },
+            datatype: "json",
+            success: function (response) {
+                var dt = response;
+                $("#ddlCity").empty();
+                var ddlObj = $("#ddlCity");
+                var items = "";
+                for (var i = 0; i < dt.length; i++) {
+                    items += "<option selected=\"selected\" value='" + dt[i].Value + "'>" + dt[i].Text.toUpperCase() + "</option>";
+                }
+                ddlObj.html(items).show();
+                ddlObj.val(CityID);
+            }
+        });
+    }
+
+    function GetCategory() {
+
+        $.ajax({
+            type: "POST",
+            url: '../Common/GetCategory',
+            data: {
+            },
+            datatype: "json",
+            success: function (response) {
+                var dt = response;
+
+                $("#ddlCategory").empty();
+                var ddlObj = $("#ddlCategory");
+                var items = ""; var curr = "";
+                for (var i = 0; i < dt.length; i++) {
+                    if (dt[i].Value == "0") {
+                        items += "<option selected=\"selected\" value='" + dt[i].Value + "'>--Select--</option>";
+                    }
+                    else {
+                        items += "<option selected=\"selected\" value='" + dt[i].Value + "'>" + dt[i].Text.toUpperCase() + "</option>";
+                    }
+                }
+                ddlObj.html(items).show();
+                ddlObj.val(0);
+            }
+        });
+    }
+
+</script>
